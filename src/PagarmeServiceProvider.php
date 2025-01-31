@@ -1,10 +1,10 @@
 <?php
 
-namespace Keepcloud\Pagarme;
+namespace Dougwn\Pagarme;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Keepcloud\Pagarme\Commands\PagarmeCommand;
+use Dougwn\Pagarme\Commands\PagarmeCommand;
 
 class PagarmeServiceProvider extends PackageServiceProvider
 {

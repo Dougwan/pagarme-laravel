@@ -1,13 +1,13 @@
 <?php
 
-namespace Keepcloud\Pagarme\Endpoints;
+namespace Dougwn\Pagarme\Endpoints;
 
-use Keepcloud\Pagarme\Contracts\Payments\Charge;
-use Keepcloud\Pagarme\Contracts\Payments\Item;
-use Keepcloud\Pagarme\Contracts\Payments\Order;
-use Keepcloud\Pagarme\Contracts\Wallet\Address;
-use Keepcloud\Pagarme\Contracts\Wallet\Customer;
-use Keepcloud\Pagarme\Contracts\Wallet\CreditCard;
+use Dougwn\Pagarme\Contracts\Payments\Charge;
+use Dougwn\Pagarme\Contracts\Payments\Item;
+use Dougwn\Pagarme\Contracts\Payments\Order;
+use Dougwn\Pagarme\Contracts\Wallet\Address;
+use Dougwn\Pagarme\Contracts\Wallet\Customer;
+use Dougwn\Pagarme\Contracts\Wallet\CreditCard;
 
 class Payload
 {
@@ -74,19 +74,23 @@ class Payload
         return $this->address->address(...$args);
     }
 
-    public function OrderInterface() {
+    public function OrderInterface()
+    {
         return $this->order;
     }
 
-    public function ChargeInterface() {
+    public function ChargeInterface()
+    {
         return $this->charge;
     }
 
-    public function ItemInterface() {
+    public function ItemInterface()
+    {
         return $this->item;
     }
 
-    public function CustomerInterface() {
+    public function CustomerInterface()
+    {
         return $this->customer;
     }
 }

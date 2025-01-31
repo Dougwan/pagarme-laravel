@@ -1,8 +1,8 @@
 <?php
 
-namespace Keepcloud\Pagarme\Endpoints;
+namespace Dougwn\Pagarme\Endpoints;
 
-use Keepcloud\Pagarme\Utils\ApiAdapter;
+use Dougwn\Pagarme\Utils\ApiAdapter;
 
 class Customer extends ApiAdapter
 {

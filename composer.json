@@ -1,6 +1,6 @@
 {
-    "name": "keepcloud/pagarme-laravel",
-    "version": "1.1.4",
+    "name": "dougwn/pagarme-laravel",
+    "version": "1.0.0",
     "description": "A Laravel package to integrate with Pagar.me API",
     "keywords": [
         "laravel",
@@ -10,18 +10,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Daniel Melo",
-            "email": "danielsmelo1994@gmail.com"
-        },
-        {
-            "name": "Caio Barilli",
-            "email": "caiobarilli@gmail.com",
-            "homepage": "https://github.com/caiobarilli"
-        },
-        {
-            "name": "Edison Costa",
-            "email": "edison@keepcloud.io",
-            "homepage": "https://keepcloud.io/"
+            "name": "Douglas Louteiro",
+            "email": "dgwnlnx@protonmail.ch"
         }
     ],
     "require": {
@@ -32,17 +22,17 @@
     },
     "autoload": {
         "psr-4": {
-            "Keepcloud\\Pagarme\\": "src/",
-            "Keepcloud\\Pagarme\\Database\\Factories\\": "database/factories/"
+            "Dougwn\\Pagarme\\": "src/",
+            "Dougwn\\Pagarme\\Database\\Factories\\": "database/factories/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Keepcloud\\Pagarme\\PagarmeServiceProvider"
+                "Dougwn\\Pagarme\\PagarmeServiceProvider"
             ],
             "aliases": {
-                "Pagarme": "Keepcloud\\Pagarme\\Facades\\Pagarme"
+                "Pagarme": "Dougwn\\Pagarme\\Facades\\Pagarme"
             }
         }
     },

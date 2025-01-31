@@ -1,6 +1,6 @@
 <?php
 
-namespace Keepcloud\Pagarme\Contracts\Wallet;
+namespace Dougwn\Pagarme\Contracts\Wallet;
 
 final class CreditCard
 {
@@ -46,7 +46,7 @@ final class CreditCard
         int $expMonth,
         string $expYear,
         string $cvv,
-    ){
+    ) {
         return [
             'number' => $number,
             'holder_name' => $holder,

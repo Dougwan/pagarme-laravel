@@ -1,6 +1,6 @@
 <?php
 
-namespace Keepcloud\Pagarme;
+namespace Dougwn\Pagarme;
 
 class Pagarme
 {

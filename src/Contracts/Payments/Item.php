@@ -1,6 +1,6 @@
 <?php
 
-namespace Keepcloud\Pagarme\Contracts\Payments;
+namespace Dougwn\Pagarme\Contracts\Payments;
 
 final class Item
 {

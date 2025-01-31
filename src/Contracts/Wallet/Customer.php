@@ -1,6 +1,6 @@
 <?php
 
-namespace Keepcloud\Pagarme\Contracts\Wallet;
+namespace Dougwn\Pagarme\Contracts\Wallet;
 
 final class Customer
 {

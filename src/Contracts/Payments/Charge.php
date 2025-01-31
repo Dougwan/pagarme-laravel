@@ -1,6 +1,6 @@
 <?php
 
-namespace Keepcloud\Pagarme\Contracts\Payments;
+namespace Dougwn\Pagarme\Contracts\Payments;
 
 final class Charge
 {
@@ -66,10 +66,10 @@ final class Charge
         int $pixTime = 3600,
         string $successUrl = 'https://pagar.me',
         string $cardId = null,
-    ){
+    ) {
         $installments = [];
 
-        if($due_at == null) {
+        if ($due_at == null) {
             $due_at = date('Y-m-d', strtotime('+4 day'));
         }
 
@@ -143,7 +143,7 @@ final class Charge
         int $expMonth,
         int $expYear,
         string $cvv,
-    ){
+    ) {
         return [
             "customer_id" => $customer,
             "payment_method" => "credit_card",

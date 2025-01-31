@@ -1,6 +1,6 @@
 <?php
 
-namespace Keepcloud\Pagarme\Commands;
+namespace Dougwn\Pagarme\Commands;
 
 use Illuminate\Console\Command;
 

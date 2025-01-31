@@ -1,9 +1,10 @@
 <?php
 
-namespace Keepcloud\Pagarme\Utils;
+namespace Dougwn\Pagarme\Utils;
 
 use Exception;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
 
 abstract class ApiAdapter
 {
