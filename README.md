@@ -4,10 +4,25 @@ Este pacote é uma integração da API do pagar.me com o Laravel.
 
 ## Instalação
 
-Você pode instalar o pacote via composer.
+Adicione os seguintes trechos no composer.json
 
-```bash
-composer require keepcloud/pagarme-laravel
+```json
+"repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Dougwan/pagarme-laravel.git"
+        }
+]
+```
+
+```json
+"dougwn/pagarme-laravel": "<version>"
+```
+
+Após atualizar o composer.json rode:
+
+```php
+composer install
 ```
 
 Publique o arquivo de configuração global com o comando:
