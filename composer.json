@@ -1,6 +1,6 @@
 {
     "name": "dougwn/pagarme-laravel",
-    "version": "1.0.2",
+    "version": "1.0.5",
     "description": "A Laravel package to integrate with Pagar.me API",
     "keywords": [
         "laravel",
