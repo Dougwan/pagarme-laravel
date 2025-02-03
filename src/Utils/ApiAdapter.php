@@ -54,17 +54,17 @@ abstract class ApiAdapter
         return $this->makeRequest('POST', $url, $data, $multipart);
     }
 
-    public function put(string $url, $data = null, $multipart = false)
+    public function put(string $url, ?array $data = null, $multipart = false)
     {
         return $this->makeRequest('PUT', $url, $data, $multipart);
     }
 
-    public function patch(string $url, array $data = null, $multipart = false)
+    public function patch(string $url, ?array $data = null, $multipart = false)
     {
         return $this->makeRequest('PATCH', $url, $data, $multipart);
     }
 
-    public function get(string $url, array $queryParams = [], $multipart = false)
+    public function get(string $url, ?array $queryParams = [], $multipart = false)
     {
         $fullUrl = $this->getUrl($url);
         $options = $this->setHeaders($multipart);
@@ -112,7 +112,7 @@ abstract class ApiAdapter
         throw new Exception($errorMessage, $statusCode);
     }
 
-    public function setHeaders(bool $multipart = false, array $data = null): array
+    public function setHeaders(bool $multipart = false, ?array $data = null): array
     {
         $options = [];
         if ($multipart) {
