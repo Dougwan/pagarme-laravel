@@ -25,4 +25,9 @@ class Recipient extends ApiAdapter
     {
         return $this->get('recipients');
     }
+
+    public function kycLink($id)
+    {
+        return $this->post("recipients/{$id}/kyc_link", []);
+    }
 }
