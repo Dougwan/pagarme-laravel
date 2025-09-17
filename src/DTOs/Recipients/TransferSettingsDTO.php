@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Payments\Pagarme\DTOs;
+namespace Dougwn\Pagarme\DTOs\Recipients;
 
 class TransferSettingsDTO
 {
