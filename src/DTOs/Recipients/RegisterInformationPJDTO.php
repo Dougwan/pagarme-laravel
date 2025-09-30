@@ -16,10 +16,10 @@ class RegisterInformationPJDTO
         public readonly string $email,
         public readonly string $document,
         public readonly string $type, // "corporation"
-        public readonly string $site_url,
+        public readonly ?string $site_url,
         public readonly int $annual_revenue,
-        public readonly string $corporation_type,
-        public readonly string $founding_date,
+        public readonly ?string $corporation_type,
+        public readonly ?string $founding_date,
         public readonly array $managing_partners,
     ) {}
 
@@ -33,19 +33,19 @@ class RegisterInformationPJDTO
             email: $data['email'],
             document: $data['document'],
             type: $data['type'],
-            site_url: $data['site_url'],
+            site_url: $data['site_url'] ?? null,
             annual_revenue: $data['annual_revenue'],
-            corporation_type: $data['corporation_type'],
-            founding_date: $data['founding_date'],
+            corporation_type: $data['corporation_type'] ?? null,
+            founding_date: $data['founding_date'] ?? null,
             managing_partners: array_map(fn ($mp) => ManagingPartnerDTO::fromArray($mp), $data['managing_partners']),
         );
     }
 
     public function toArray(): array
     {
-        return [
+        return array_filter([
             'phone_numbers' => array_map(fn ($pn) => $pn->toArray(), $this->phone_numbers),
-            'address' => $this->main_address->toArray(),
+            'main_address' => $this->main_address->toArray(),
             'company_name' => $this->company_name,
             'email' => $this->email,
             'document' => $this->document,
@@ -56,6 +56,6 @@ class RegisterInformationPJDTO
             'corporation_type' => $this->corporation_type,
             'founding_date' => $this->founding_date,
             'managing_partners' => array_map(fn ($mp) => $mp->toArray(), $this->managing_partners),
-        ];
+        ], fn ($value) => !is_null($value));
     }
 }

@@ -14,7 +14,7 @@ class RegisterInformationPFDTO
         public readonly string $email,
         public readonly string $document,
         public readonly string $type, // "individual"
-        public readonly string $site_url,
+        public readonly ?string $site_url,
         public readonly string $mother_name,
         public readonly string $birthdate,
         public readonly int $monthly_income,
@@ -30,7 +30,7 @@ class RegisterInformationPFDTO
             email: $data['email'],
             document: $data['document'],
             type: $data['type'],
-            site_url: $data['site_url'],
+            site_url: $data['site_url'] ?? null,
             mother_name: $data['mother_name'],
             birthdate: $data['birthdate'],
             monthly_income: $data['monthly_income'],
@@ -40,7 +40,7 @@ class RegisterInformationPFDTO
 
     public function toArray(): array
     {
-        return [
+        return array_filter([
             'phone_numbers' => array_map(fn ($pn) => $pn->toArray(), $this->phone_numbers),
             'address' => $this->address->toArray(),
             'name' => $this->name,
@@ -52,6 +52,6 @@ class RegisterInformationPFDTO
             'birthdate' => $this->birthdate,
             'monthly_income' => $this->monthly_income,
             'professional_occupation' => $this->professional_occupation,
-        ];
+        ], fn ($value) => !is_null($value));
     }
 }

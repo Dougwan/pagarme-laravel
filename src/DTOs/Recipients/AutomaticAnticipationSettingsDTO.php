@@ -17,17 +17,17 @@ class AutomaticAnticipationSettingsDTO
             enabled: filter_var($data['enabled'], FILTER_VALIDATE_BOOLEAN),
             type: $data['type'],
             volume_percentage: $data['volume_percentage'],
-            delay: $data['delay'] !== 'null' ? $data['delay'] : null,
+            delay: $data['delay'] ?? null,
         );
     }
 
     public function toArray(): array
     {
-        return [
+        return array_filter([
             'enabled' => $this->enabled,
             'type' => $this->type,
             'volume_percentage' => $this->volume_percentage,
             'delay' => $this->delay,
-        ];
+        ], fn ($value) => !is_null($value));
     }
 }
